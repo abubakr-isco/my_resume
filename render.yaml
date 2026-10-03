@@ -1,0 +1,6 @@
+# Render Blueprint: deploys this repo as a free static site (no build step).
+services:
+  - type: web
+    name: my-resume
+    runtime: static
+    staticPublishPath: ./
