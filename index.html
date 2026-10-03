@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abubakr — Frontend Developer</title>
+  <meta name="description" content="Frontend Developer learning HTML, CSS, JavaScript, Python and Django.">
+  <meta name="author" content="Abubakr">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abubakr — Frontend Developer">
+  <meta property="og:description" content="Frontend Developer learning HTML, CSS, JavaScript, Python and Django.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c6cff'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='900' font-size='38' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Loading screen: shown only when JS is on, fades out after ~0.9s (see js/main.js) -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__text">HELLO, WORLD<span class="loader__caret">_</span></span>
+  </div>
+
+  <canvas class="bg-network" id="bg-network" aria-hidden="true"></canvas>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Go to homepage"><span>&lt;</span>Abubakr<span>/&gt;</span></a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#journey" class="nav__link">Journey</a>
+        <a href="#contact" class="nav__link nav__link--mobile-only">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--small btn--accent header__cta">Contact Me</a>
+
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__text">
+            <p class="hero__hello" data-reveal>
+              <span class="hero__wave" aria-hidden="true">👋</span> Hi, I'm <span class="accent">Abubakr</span>
+            </p>
+
+            <h1 class="hero__title">
+              <span class="line"><span>Frontend</span></span>
+              <span class="line line--grad"><span>Developer</span></span>
+            </h1>
+
+            <p class="hero__lead" data-reveal>
+              I build clean, responsive and interactive websites with HTML, CSS and
+              JavaScript. Currently learning Python and Django to become a
+              Full-Stack Developer.
+            </p>
+
+            <div class="hero__actions" data-reveal>
+              <a href="#projects" class="btn btn--accent">View Projects <span class="arrow">↘</span></a>
+              <a href="#contact" class="btn btn--ghost">Contact Me</a>
+            </div>
+          </div>
+
+          <!-- Code card: types itself out after the hero appears (see js/main.js) -->
+          <div class="terminal" data-reveal aria-hidden="true">
+            <div class="terminal__bar"><span></span><span></span><span></span><em>developer.js</em></div>
+            <pre class="terminal__body"><code id="terminal-code"><span class="tok-key">const</span> <span class="tok-var">developer</span> = {
+  <span class="tok-prop">role</span>: <span class="tok-str">"Frontend Developer"</span>,
+  <span class="tok-prop">skills</span>: [<span class="tok-str">"HTML"</span>, <span class="tok-str">"CSS"</span>, <span class="tok-str">"JavaScript"</span>],
+  <span class="tok-prop">learning</span>: [<span class="tok-str">"Python"</span>, <span class="tok-str">"Django"</span>],
+  <span class="tok-prop">goal</span>: <span class="tok-str">"Full-Stack Developer"</span>
+};</code><span class="terminal__caret"></span></pre>
+          </div>
+        </div>
+
+        <ul class="facts" data-reveal>
+          <li><span>Focus</span><b>Frontend → Full-Stack</b></li>
+          <li><span>Learning</span><b>Python &amp; Django</b></li>
+          <li><span>Based in</span><b>Samarkand</b></li>
+          <li><span>Status</span><b><i class="dot"></i>Open to junior roles</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i>
+        <span>Python</span><i>✦</i><span>Django</span><i>✦</i><span>Git</span><i>✦</i>
+        <span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i>
+        <span>Python</span><i>✦</i><span>Django</span><i>✦</i><span>Git</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--surface" id="about">
+      <div class="container about">
+        <div class="about__photo" data-reveal>
+          <!-- TODO: replace with your photo: <img src="images/me.jpg" alt="Abubakr"> -->
+          <div class="about__monogram">AB</div>
+          <div class="about__caption">
+            <span>Abubakr</span>
+            <span>Frontend Developer</span>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="section__label" data-reveal>(01)</span>
+          <h2 class="section__title" data-reveal>About Me</h2>
+          <p class="about__statement" data-reveal>
+            I'm a <em>Frontend Developer</em> learning how to build modern websites.
+          </p>
+          <p class="about__text" data-reveal>
+            I'm confidently working through HTML, CSS and JavaScript, and I enjoy
+            turning designs into clean, responsive interfaces.
+          </p>
+          <p class="about__text" data-reveal>
+            Right now I'm expanding into backend development with Python and Django.
+            My goal is to gradually move from Frontend to Full-Stack Development,
+            one project at a time.
+          </p>
+          <p class="about__text" data-reveal>
+            I don't have commercial experience yet — this portfolio shows my skills,
+            my learning process and the projects I build while studying.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__label">(02)</span>
+          <h2 class="section__title">Skills</h2>
+          <p class="section__subtitle">Honest levels — no fake percentages.</p>
+        </div>
+
+        <ol class="skill-groups">
+          <li class="skill-group" data-reveal>
+            <span class="skill-group__num">01</span>
+            <h3 class="skill-group__title">Frontend</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="comfortable">HTML5 <span>Comfortable</span></li>
+              <li class="skill" data-level="comfortable">CSS3 <span>Comfortable</span></li>
+              <li class="skill" data-level="improving">JavaScript <span>Improving</span></li>
+            </ul>
+          </li>
+          <li class="skill-group" data-reveal>
+            <span class="skill-group__num">02</span>
+            <h3 class="skill-group__title">Backend</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="learning">Python <span>Learning</span></li>
+              <li class="skill" data-level="learning">Django <span>Learning</span></li>
+            </ul>
+          </li>
+          <li class="skill-group" data-reveal>
+            <span class="skill-group__num">03</span>
+            <h3 class="skill-group__title">Tools</h3>
+            <ul class="skill-list">
+              <li class="skill" data-level="basic">Git <span>Basic</span></li>
+              <li class="skill" data-level="basic">GitHub <span>Basic</span></li>
+              <li class="skill" data-level="comfortable">VS Code <span>Comfortable</span></li>
+              <li class="skill" data-level="basic">Figma <span>Basic</span></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section--surface" id="projects">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__label">(03)</span>
+          <h2 class="section__title">Projects</h2>
+          <p class="section__subtitle">Practice &amp; learning projects I build while studying.</p>
+        </div>
+
+        <!--
+          To show a screenshot instead of the drawn mockup, replace <div class="mock">…</div>
+          with <img src="images/project-1.jpg" alt="Project screenshot">
+        -->
+        <div class="works">
+
+          <article class="work" data-reveal>
+            <a href="https://github.com/Shaxzod777/team-k" target="_blank" rel="noopener" class="work__media"
+               style="--c1:#8b98ad; --c2:#3b4558; --c3:#0d1118;"
+               aria-label="Mercedes-Benz Samarkand on GitHub">
+              <span class="work__badge">Team Project</span>
+              <div class="mock">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__body">
+                  <div class="mock__nav"><i></i><i></i><i></i><i></i></div>
+                  <div class="mock__banner"><i class="w60"></i><i class="w40 thin"></i></div>
+                  <div class="mock__grid"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </a>
+            <h3 class="work__title">Mercedes-Benz Samarkand</h3>
+            <p class="work__desc">A multi-page dealership website: home page, model range (E-Class, GLE, CLE, S-Class), an interactive car configurator and a contacts page.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--ghost btn--small" href="https://github.com/Shaxzod777/team-k" target="_blank" rel="noopener">GitHub ↗</a>
+              <span class="btn btn--small is-disabled" aria-disabled="true">Coming Soon</span>
+            </div>
+          </article>
+
+          <article class="work" data-reveal>
+            <a href="https://abubakrbahronov-creator.github.io/javascript-mini-app/" target="_blank" rel="noopener" class="work__media"
+               style="--c1:#f7c600; --c2:#ffe17a;"
+               aria-label="JavaScript Mini App live demo">
+              <span class="work__badge">Learning Project</span>
+              <div class="mock mock--phone">
+                <div class="mock__notch"></div>
+                <div class="mock__body">
+                  <div class="mock__ring"></div>
+                  <div class="mock__text mock__text--center"><i class="w60"></i><i class="w40 thin"></i></div>
+                  <div class="mock__list"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </a>
+            <h3 class="work__title">JavaScript Mini App</h3>
+            <p class="work__desc">A small interactive app (for example a to-do list or quiz) to practice DOM manipulation, events and localStorage.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--ghost btn--small" href="https://github.com/abubakrbahronov-creator/javascript-mini-app" target="_blank" rel="noopener">GitHub ↗</a>
+              <a class="btn btn--accent btn--small" href="https://abubakrbahronov-creator.github.io/javascript-mini-app/" target="_blank" rel="noopener">Live Demo ↗</a>
+            </div>
+          </article>
+
+          <article class="work" data-reveal>
+            <a href="https://github.com/abubakrbahronov-creator" target="_blank" rel="noopener" class="work__media"
+               style="--c1:#0c4b33; --c2:#44b78b;"
+               aria-label="Django Web Application on GitHub">
+              <span class="work__badge">Learning Project</span>
+              <div class="mock">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__body mock__body--dash">
+                  <div class="mock__side"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="mock__main">
+                    <div class="mock__cards"><i></i><i></i><i></i></div>
+                    <div class="mock__chart">
+                      <span style="--h:40%"></span><span style="--h:65%"></span><span style="--h:50%"></span>
+                      <span style="--h:85%"></span><span style="--h:60%"></span><span style="--h:95%"></span><span style="--h:70%"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <h3 class="work__title">Django Web Application</h3>
+            <p class="work__desc">My first backend project while learning Django: models, views, templates and working with a database.</p>
+            <ul class="tags"><li>Python</li><li>Django</li></ul>
+            <div class="work__actions">
+              <a class="btn btn--ghost btn--small" href="https://github.com/abubakrbahronov-creator" target="_blank" rel="noopener">GitHub ↗</a>
+              <span class="btn btn--small is-disabled" aria-disabled="true">Coming Soon</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="section__label">(04)</span>
+          <h2 class="section__title">My Journey</h2>
+          <p class="section__subtitle">From Frontend basics toward Full-Stack.</p>
+        </div>
+
+        <div class="journey">
+          <ol class="timeline">
+            <li class="timeline__row" data-reveal>
+              <span class="timeline__year">2026</span>
+              <p class="timeline__text">Learning HTML &amp; CSS</p>
+            </li>
+            <li class="timeline__row" data-reveal>
+              <span class="timeline__year">2026</span>
+              <p class="timeline__text">Learning JavaScript</p>
+            </li>
+            <li class="timeline__row" data-reveal>
+              <span class="timeline__year">2026</span>
+              <p class="timeline__text">Building first Frontend projects</p>
+            </li>
+            <li class="timeline__row" data-reveal>
+              <span class="timeline__year">2026</span>
+              <p class="timeline__text">Learning Python</p>
+            </li>
+            <li class="timeline__row" data-reveal>
+              <span class="timeline__year">2026</span>
+              <p class="timeline__text">Learning Django</p>
+            </li>
+            <li class="timeline__row timeline__row--future" data-reveal>
+              <span class="timeline__year">Future</span>
+              <p class="timeline__text">Frontend → Full-Stack Developer</p>
+            </li>
+          </ol>
+
+          <aside class="learning" data-reveal aria-label="Currently learning">
+            <h3 class="learning__title">Currently Learning</h3>
+            <ul class="learning__list">
+              <li>Python</li>
+              <li>Django</li>
+              <li>Backend Development</li>
+              <li>REST APIs</li>
+              <li>Databases</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <span class="section__label" data-reveal>(05)</span>
+        <h2 class="contact__title" data-reveal>Let's work<br><span>together</span></h2>
+        <p class="contact__lead" data-reveal>Have an idea or want to connect? Feel free to reach out.</p>
+
+        <div class="contact__mail" data-reveal>
+          <a href="mailto:abubakrbahronov@gmail.com" class="contact__email" id="email">abubakrbahronov@gmail.com</a>
+          <button class="btn btn--ghost btn--small" id="copy" type="button">Copy</button>
+        </div>
+
+        <ul class="socials" data-reveal>
+          <li><a href="mailto:abubakrbahronov@gmail.com">Email <span>↗</span></a></li>
+          <li><a href="https://github.com/abubakrbahronov-creator" target="_blank" rel="noopener">GitHub <span>↗</span></a></li>
+          <li><a href="https://t.me/isco_lancaster" target="_blank" rel="noopener">Telegram <span>↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> Abubakr</span>
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+      <ul class="footer__links">
+        <li><a href="https://github.com/abubakrbahronov-creator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://t.me/isco_lancaster" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="#top">Back to top ↑</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
