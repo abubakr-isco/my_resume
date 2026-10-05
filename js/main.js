@@ -34,19 +34,74 @@
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
 
+  const isMenuOpen = () => burger.getAttribute('aria-expanded') === 'true';
+  const updateBurgerLabel = () => burger.setAttribute('aria-label', t(isMenuOpen() ? 'menu.close' : 'menu.open'));
+
   const setMenu = (open) => {
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    updateBurgerLabel();
     nav.classList.toggle('is-open', open);
     document.body.classList.toggle('menu-open', open);
     if (open) header.classList.remove('is-hidden');
   };
 
-  burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+  burger.addEventListener('click', () => setMenu(!isMenuOpen()));
   nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setMenu(false);
   });
+
+  /* ---------- Language switch: RU (default, from the HTML) / EN (js/translations.js) ---------- */
+  const translations = window.TRANSLATIONS || { ru: {}, en: {} };
+  const textEls = document.querySelectorAll('[data-i18n]');
+  const attrEls = document.querySelectorAll('[data-i18n-attr]');
+  const langButtons = document.querySelectorAll('[data-lang]');
+  let lang = 'ru';
+
+  // data-i18n-attr="aria-label:key, alt:key2" → [['aria-label', 'key'], ['alt', 'key2']]
+  const attrPairs = (el) => el.dataset.i18nAttr.split(',').map((pair) => pair.split(':').map((s) => s.trim()));
+
+  const t = (key) => translations[lang][key] ?? translations.ru[key] ?? '';
+
+  // Remember the Russian text from the HTML so we can switch back to it
+  textEls.forEach((el) => {
+    translations.ru[el.dataset.i18n] = el.innerHTML;
+  });
+  attrEls.forEach((el) => {
+    attrPairs(el).forEach(([attr, key]) => {
+      translations.ru[key] = el.getAttribute(attr);
+    });
+  });
+
+  const setLang = (next) => {
+    lang = next === 'en' ? 'en' : 'ru';
+    root.lang = lang;
+    textEls.forEach((el) => {
+      el.innerHTML = t(el.dataset.i18n);
+    });
+    attrEls.forEach((el) => {
+      attrPairs(el).forEach(([attr, key]) => el.setAttribute(attr, t(key)));
+    });
+    langButtons.forEach((btn) => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
+    updateBurgerLabel();
+    try {
+      localStorage.setItem('lang', lang);
+    } catch {
+      /* storage blocked — the choice just won't be remembered */
+    }
+  };
+
+  langButtons.forEach((btn) => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
+
+  // ?lang=en in the URL wins (handy for sending the English version), then the saved choice
+  let savedLang = null;
+  try {
+    savedLang = localStorage.getItem('lang');
+  } catch {
+    /* ignore */
+  }
+  const startLang = new URLSearchParams(window.location.search).get('lang') || savedLang;
+  if (startLang === 'en') setLang('en');
 
   /* ---------- Reveal on scroll (with stagger for siblings) ---------- */
   const revealEls = document.querySelectorAll('[data-reveal]');
@@ -105,7 +160,7 @@
     const email = document.getElementById('email').textContent.trim();
     try {
       await navigator.clipboard.writeText(email);
-      showToast('Email copied ✓');
+      showToast(t('toast.copied'));
     } catch {
       showToast(email);
     }

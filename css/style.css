@@ -277,6 +277,44 @@ main,
   display: none;
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* RU / EN switch — stays above the open mobile menu, like the logo and burger */
+.lang {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.lang__btn {
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: color 0.25s, background-color 0.25s;
+}
+
+.lang__btn:hover {
+  color: var(--text);
+}
+
+.lang__btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
 .burger {
   display: none;
   position: relative;
@@ -409,6 +447,11 @@ main,
   background: linear-gradient(90deg, var(--text) 10%, var(--accent-strong) 90%);
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+/* "РАЗРАБОТЧИК" is longer than "DEVELOPER", so the Russian title is a bit smaller */
+html[lang="ru"] .hero__title {
+  font-size: clamp(2rem, 4.6vw, 4.4rem);
 }
 
 .js .line>span {
@@ -1513,6 +1556,10 @@ main,
 
   .hero__title {
     font-size: min(9.6vw, 6rem);
+  }
+
+  html[lang="ru"] .hero__title {
+    font-size: min(9vw, 5.6rem);
   }
 
   .journey {

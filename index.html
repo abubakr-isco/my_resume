@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abubakr — Frontend Developer</title>
-  <meta name="description" content="Frontend Developer learning HTML, CSS, JavaScript, Python and Django.">
+  <title data-i18n="meta.title">Абубакр — Frontend-разработчик</title>
+  <meta name="description" content="Frontend-разработчик: HTML, CSS и JavaScript. Сейчас изучаю Python и Django.">
   <meta name="author" content="Abubakr">
   <meta name="theme-color" content="#0a0a0f">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Abubakr — Frontend Developer">
-  <meta property="og:description" content="Frontend Developer learning HTML, CSS, JavaScript, Python and Django.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Абубакр — Frontend-разработчик">
+  <meta property="og:description" content="Frontend-разработчик: HTML, CSS и JavaScript. Сейчас изучаю Python и Django.">
 
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c6cff'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='900' font-size='38' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E">
@@ -37,24 +39,37 @@
 
   <canvas class="bg-network" id="bg-network" aria-hidden="true"></canvas>
 
+  <!--
+    Russian is the main language and lives right here in the HTML.
+    Elements with data-i18n="key" (text) or data-i18n-attr="attr:key" (attributes)
+    get their English version from js/translations.js when EN is selected.
+  -->
+
   <!-- ============ HEADER ============ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#top" class="logo" aria-label="Go to homepage"><span>&lt;</span>Abubakr<span>/&gt;</span></a>
+      <a href="#top" class="logo" aria-label="На главную" data-i18n-attr="aria-label:header.home"><span>&lt;</span>Abubakr<span>/&gt;</span></a>
 
-      <nav class="nav" id="nav" aria-label="Main navigation">
-        <a href="#about" class="nav__link">About</a>
-        <a href="#skills" class="nav__link">Skills</a>
-        <a href="#projects" class="nav__link">Projects</a>
-        <a href="#journey" class="nav__link">Journey</a>
-        <a href="#contact" class="nav__link nav__link--mobile-only">Contact</a>
+      <nav class="nav" id="nav" aria-label="Основная навигация" data-i18n-attr="aria-label:nav.label">
+        <a href="#about" class="nav__link" data-i18n="nav.about">Обо мне</a>
+        <a href="#skills" class="nav__link" data-i18n="nav.skills">Навыки</a>
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Проекты</a>
+        <a href="#journey" class="nav__link" data-i18n="nav.journey">Путь</a>
+        <a href="#contact" class="nav__link nav__link--mobile-only" data-i18n="nav.contact">Контакты</a>
       </nav>
 
-      <a href="#contact" class="btn btn--small btn--accent header__cta">Contact Me</a>
+      <div class="header__actions">
+        <div class="lang" role="group" aria-label="Язык сайта" data-i18n-attr="aria-label:lang.label">
+          <button class="lang__btn" type="button" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="true">RU</button>
+          <button class="lang__btn" type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
 
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span>
-      </button>
+        <a href="#contact" class="btn btn--small btn--accent header__cta" data-i18n="cta.contact">Связаться</a>
+
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -66,23 +81,24 @@
         <div class="hero__grid">
           <div class="hero__text">
             <p class="hero__hello" data-reveal>
-              <span class="hero__wave" aria-hidden="true">👋</span> Hi, I'm <span class="accent">Abubakr</span>
+              <span class="hero__wave" aria-hidden="true">👋</span>
+              <span data-i18n="hero.hello">Привет, я <span class="accent">Абубакр</span></span>
             </p>
 
             <h1 class="hero__title">
-              <span class="line"><span>Frontend</span></span>
-              <span class="line line--grad"><span>Developer</span></span>
+              <span class="line"><span data-i18n="hero.title1">Frontend</span></span>
+              <span class="line line--grad"><span data-i18n="hero.title2">разработчик</span></span>
             </h1>
 
-            <p class="hero__lead" data-reveal>
-              I build clean, responsive and interactive websites with HTML, CSS and
-              JavaScript. Currently learning Python and Django to become a
-              Full-Stack Developer.
+            <p class="hero__lead" data-reveal data-i18n="hero.lead">
+              Создаю аккуратные, адаптивные и интерактивные сайты на HTML, CSS и
+              JavaScript. Сейчас изучаю Python и Django, чтобы стать
+              Full-Stack-разработчиком.
             </p>
 
             <div class="hero__actions" data-reveal>
-              <a href="#projects" class="btn btn--accent">View Projects <span class="arrow">↘</span></a>
-              <a href="#contact" class="btn btn--ghost">Contact Me</a>
+              <a href="#projects" class="btn btn--accent"><span data-i18n="hero.viewProjects">Смотреть проекты</span> <span class="arrow">↘</span></a>
+              <a href="#contact" class="btn btn--ghost" data-i18n="cta.contact">Связаться</a>
             </div>
           </div>
 
@@ -99,10 +115,10 @@
         </div>
 
         <ul class="facts" data-reveal>
-          <li><span>Focus</span><b>Frontend → Full-Stack</b></li>
-          <li><span>Learning</span><b>Python &amp; Django</b></li>
-          <li><span>Based in</span><b>Samarkand</b></li>
-          <li><span>Status</span><b><i class="dot"></i>Open to junior roles</b></li>
+          <li><span data-i18n="facts.focus">Фокус</span><b>Frontend → Full-Stack</b></li>
+          <li><span data-i18n="facts.learning">Изучаю</span><b data-i18n="facts.learningValue">Python и Django</b></li>
+          <li><span data-i18n="facts.based">Город</span><b data-i18n="facts.basedValue">Самарканд</b></li>
+          <li><span data-i18n="facts.status">Статус</span><b data-i18n="facts.statusValue"><i class="dot"></i>Открыт к junior-позициям</b></li>
         </ul>
       </div>
     </section>
@@ -121,31 +137,30 @@
     <section class="section section--surface" id="about">
       <div class="container about">
         <div class="about__photo" data-reveal>
-          <img src="images/me.jpg" alt="Abubakr" loading="lazy">
+          <img src="images/me.jpg" alt="Абубакр" loading="lazy" data-i18n-attr="alt:about.photoAlt">
           <div class="about__caption">
-            <span>Abubakr</span>
-            <span>Frontend Developer</span>
+            <span data-i18n="about.name">Абубакр</span>
+            <span data-i18n="about.role">Frontend-разработчик</span>
           </div>
         </div>
 
         <div class="about__content">
           <span class="section__label" data-reveal>(01)</span>
-          <h2 class="section__title" data-reveal>About Me</h2>
-          <p class="about__statement" data-reveal>
-            I'm a <em>Frontend Developer</em> learning how to build modern websites.
+          <h2 class="section__title" data-reveal data-i18n="about.title">Обо мне</h2>
+          <p class="about__statement" data-reveal data-i18n="about.statement">
+            Я <em>Frontend-разработчик</em> и учусь создавать современные сайты.
           </p>
-          <p class="about__text" data-reveal>
-            I'm confidently working through HTML, CSS and JavaScript, and I enjoy
-            turning designs into clean, responsive interfaces.
+          <p class="about__text" data-reveal data-i18n="about.text1">
+            Я уверенно работаю с HTML, CSS и JavaScript и люблю превращать макеты
+            в аккуратные адаптивные интерфейсы.
           </p>
-          <p class="about__text" data-reveal>
-            Right now I'm expanding into backend development with Python and Django.
-            My goal is to gradually move from Frontend to Full-Stack Development,
-            one project at a time.
+          <p class="about__text" data-reveal data-i18n="about.text2">
+            Сейчас я осваиваю backend-разработку на Python и Django. Моя цель —
+            постепенно перейти от Frontend к Full-Stack-разработке, проект за проектом.
           </p>
-          <p class="about__text" data-reveal>
-            I don't have commercial experience yet — this portfolio shows my skills,
-            my learning process and the projects I build while studying.
+          <p class="about__text" data-reveal data-i18n="about.text3">
+            Коммерческого опыта у меня пока нет — это портфолио показывает мои навыки,
+            процесс обучения и проекты, которые я делаю во время учёбы.
           </p>
         </div>
       </div>
@@ -156,8 +171,8 @@
       <div class="container">
         <div class="section__head" data-reveal>
           <span class="section__label">(02)</span>
-          <h2 class="section__title">Skills</h2>
-          <p class="section__subtitle">Honest levels — no fake percentages.</p>
+          <h2 class="section__title" data-i18n="skills.title">Навыки</h2>
+          <p class="section__subtitle" data-i18n="skills.subtitle">Честные уровни — без выдуманных процентов.</p>
         </div>
 
         <ol class="skill-groups">
@@ -165,27 +180,27 @@
             <span class="skill-group__num">01</span>
             <h3 class="skill-group__title">Frontend</h3>
             <ul class="skill-list">
-              <li class="skill" data-level="comfortable">HTML5 <span>Comfortable</span></li>
-              <li class="skill" data-level="comfortable">CSS3 <span>Comfortable</span></li>
-              <li class="skill" data-level="improving">JavaScript <span>Improving</span></li>
+              <li class="skill" data-level="comfortable">HTML5 <span data-i18n="level.comfortable">Уверенно</span></li>
+              <li class="skill" data-level="comfortable">CSS3 <span data-i18n="level.comfortable">Уверенно</span></li>
+              <li class="skill" data-level="improving">JavaScript <span data-i18n="level.improving">Улучшаю</span></li>
             </ul>
           </li>
           <li class="skill-group" data-reveal>
             <span class="skill-group__num">02</span>
             <h3 class="skill-group__title">Backend</h3>
             <ul class="skill-list">
-              <li class="skill" data-level="learning">Python <span>Learning</span></li>
-              <li class="skill" data-level="learning">Django <span>Learning</span></li>
+              <li class="skill" data-level="learning">Python <span data-i18n="level.learning">Изучаю</span></li>
+              <li class="skill" data-level="learning">Django <span data-i18n="level.learning">Изучаю</span></li>
             </ul>
           </li>
           <li class="skill-group" data-reveal>
             <span class="skill-group__num">03</span>
-            <h3 class="skill-group__title">Tools</h3>
+            <h3 class="skill-group__title" data-i18n="skills.tools">Инструменты</h3>
             <ul class="skill-list">
-              <li class="skill" data-level="basic">Git <span>Basic</span></li>
-              <li class="skill" data-level="basic">GitHub <span>Basic</span></li>
-              <li class="skill" data-level="comfortable">VS Code <span>Comfortable</span></li>
-              <li class="skill" data-level="basic">Figma <span>Basic</span></li>
+              <li class="skill" data-level="basic">Git <span data-i18n="level.basic">Базово</span></li>
+              <li class="skill" data-level="basic">GitHub <span data-i18n="level.basic">Базово</span></li>
+              <li class="skill" data-level="comfortable">VS Code <span data-i18n="level.comfortable">Уверенно</span></li>
+              <li class="skill" data-level="basic">Figma <span data-i18n="level.basic">Базово</span></li>
             </ul>
           </li>
         </ol>
@@ -197,8 +212,8 @@
       <div class="container">
         <div class="section__head" data-reveal>
           <span class="section__label">(03)</span>
-          <h2 class="section__title">Projects</h2>
-          <p class="section__subtitle">Practice &amp; learning projects I build while studying.</p>
+          <h2 class="section__title" data-i18n="projects.title">Проекты</h2>
+          <p class="section__subtitle" data-i18n="projects.subtitle">Учебные и практические проекты, которые я делаю во время обучения.</p>
         </div>
 
         <!--
@@ -209,8 +224,9 @@
 
           <article class="work" data-reveal>
             <a href="https://github.com/Shaxzod777/team-k" target="_blank" rel="noopener" class="work__media"
-              style="--c1:#8b98ad; --c2:#3b4558; --c3:#0d1118;" aria-label="Mercedes-Benz Samarkand on GitHub">
-              <span class="work__badge">Team Project</span>
+              style="--c1:#8b98ad; --c2:#3b4558; --c3:#0d1118;" aria-label="Mercedes-Benz Samarkand на GitHub"
+              data-i18n-attr="aria-label:work1.aria">
+              <span class="work__badge" data-i18n="badge.team">Командный проект</span>
               <div class="mock">
                 <div class="mock__bar"><span></span><span></span><span></span></div>
                 <div class="mock__body">
@@ -221,8 +237,8 @@
               </div>
             </a>
             <h3 class="work__title">Mercedes-Benz Samarkand</h3>
-            <p class="work__desc">A multi-page dealership website: home page, model range (E-Class, GLE, CLE, S-Class),
-              an interactive car configurator and a contacts page.</p>
+            <p class="work__desc" data-i18n="work1.desc">Многостраничный сайт автосалона: главная страница, модельный ряд
+              (E-Class, GLE, CLE, S-Class), интерактивный конфигуратор автомобиля и страница контактов.</p>
             <ul class="tags">
               <li>HTML</li>
               <li>CSS</li>
@@ -231,14 +247,15 @@
             <div class="work__actions">
               <a class="btn btn--ghost btn--small" href="https://github.com/Shaxzod777/team-k" target="_blank"
                 rel="noopener">GitHub ↗</a>
-              <span class="btn btn--small is-disabled" aria-disabled="true">Coming Soon</span>
+              <span class="btn btn--small is-disabled" aria-disabled="true" data-i18n="work.soon">Скоро</span>
             </div>
           </article>
 
           <article class="work" data-reveal>
             <a href="https://abubakrbahronov-creator.github.io/javascript-mini-app/" target="_blank" rel="noopener"
-              class="work__media" style="--c1:#f7c600; --c2:#ffe17a;" aria-label="JavaScript Mini App live demo">
-              <span class="work__badge">Learning Project</span>
+              class="work__media" style="--c1:#f7c600; --c2:#ffe17a;" aria-label="Мини-приложение на JavaScript — демо"
+              data-i18n-attr="aria-label:work2.aria">
+              <span class="work__badge" data-i18n="badge.learning">Учебный проект</span>
               <div class="mock mock--phone">
                 <div class="mock__notch"></div>
                 <div class="mock__body">
@@ -248,9 +265,9 @@
                 </div>
               </div>
             </a>
-            <h3 class="work__title">JavaScript Mini App</h3>
-            <p class="work__desc">A small interactive app (for example a to-do list or quiz) to practice DOM
-              manipulation, events and localStorage.</p>
+            <h3 class="work__title" data-i18n="work2.title">Мини-приложение на JavaScript</h3>
+            <p class="work__desc" data-i18n="work2.desc">Небольшое интерактивное приложение (например, список задач или
+              викторина) для практики работы с DOM, событиями и localStorage.</p>
             <ul class="tags">
               <li>HTML</li>
               <li>CSS</li>
@@ -261,14 +278,15 @@
                 target="_blank" rel="noopener">GitHub ↗</a>
               <a class="btn btn--accent btn--small"
                 href="https://abubakrbahronov-creator.github.io/javascript-mini-app/" target="_blank"
-                rel="noopener">Live Demo ↗</a>
+                rel="noopener" data-i18n="work.demo">Демо ↗</a>
             </div>
           </article>
 
           <article class="work" data-reveal>
             <a href="https://github.com/abubakrbahronov-creator" target="_blank" rel="noopener" class="work__media"
-              style="--c1:#0c4b33; --c2:#44b78b;" aria-label="Django Web Application on GitHub">
-              <span class="work__badge">Learning Project</span>
+              style="--c1:#0c4b33; --c2:#44b78b;" aria-label="Веб-приложение на Django на GitHub"
+              data-i18n-attr="aria-label:work3.aria">
+              <span class="work__badge" data-i18n="badge.learning">Учебный проект</span>
               <div class="mock">
                 <div class="mock__bar"><span></span><span></span><span></span></div>
                 <div class="mock__body mock__body--dash">
@@ -284,9 +302,9 @@
                 </div>
               </div>
             </a>
-            <h3 class="work__title">Django Web Application</h3>
-            <p class="work__desc">My first backend project while learning Django: models, views, templates and working
-              with a database.</p>
+            <h3 class="work__title" data-i18n="work3.title">Веб-приложение на Django</h3>
+            <p class="work__desc" data-i18n="work3.desc">Мой первый backend-проект при изучении Django: модели,
+              представления, шаблоны и работа с базой данных.</p>
             <ul class="tags">
               <li>Python</li>
               <li>Django</li>
@@ -294,7 +312,7 @@
             <div class="work__actions">
               <a class="btn btn--ghost btn--small" href="https://github.com/abubakrbahronov-creator" target="_blank"
                 rel="noopener">GitHub ↗</a>
-              <span class="btn btn--small is-disabled" aria-disabled="true">Coming Soon</span>
+              <span class="btn btn--small is-disabled" aria-disabled="true" data-i18n="work.soon">Скоро</span>
             </div>
           </article>
 
@@ -307,46 +325,46 @@
       <div class="container">
         <div class="section__head" data-reveal>
           <span class="section__label">(04)</span>
-          <h2 class="section__title">My Journey</h2>
-          <p class="section__subtitle">From Frontend basics toward Full-Stack.</p>
+          <h2 class="section__title" data-i18n="journey.title">Мой путь</h2>
+          <p class="section__subtitle" data-i18n="journey.subtitle">От основ Frontend — к Full-Stack.</p>
         </div>
 
         <div class="journey">
           <ol class="timeline">
             <li class="timeline__row" data-reveal>
               <span class="timeline__year">2026</span>
-              <p class="timeline__text">Learning HTML &amp; CSS</p>
+              <p class="timeline__text" data-i18n="journey.step1">Изучение HTML и CSS</p>
             </li>
             <li class="timeline__row" data-reveal>
               <span class="timeline__year">2026</span>
-              <p class="timeline__text">Learning JavaScript</p>
+              <p class="timeline__text" data-i18n="journey.step2">Изучение JavaScript</p>
             </li>
             <li class="timeline__row" data-reveal>
               <span class="timeline__year">2026</span>
-              <p class="timeline__text">Building first Frontend projects</p>
+              <p class="timeline__text" data-i18n="journey.step3">Первые Frontend-проекты</p>
             </li>
             <li class="timeline__row" data-reveal>
               <span class="timeline__year">2026</span>
-              <p class="timeline__text">Learning Python</p>
+              <p class="timeline__text" data-i18n="journey.step4">Изучение Python</p>
             </li>
             <li class="timeline__row" data-reveal>
               <span class="timeline__year">2026</span>
-              <p class="timeline__text">Learning Django</p>
+              <p class="timeline__text" data-i18n="journey.step5">Изучение Django</p>
             </li>
             <li class="timeline__row timeline__row--future" data-reveal>
-              <span class="timeline__year">Future</span>
-              <p class="timeline__text">Frontend → Full-Stack Developer</p>
+              <span class="timeline__year" data-i18n="journey.future">Будущее</span>
+              <p class="timeline__text" data-i18n="journey.goal">Frontend → Full-Stack-разработчик</p>
             </li>
           </ol>
 
-          <aside class="learning" data-reveal aria-label="Currently learning">
-            <h3 class="learning__title">Currently Learning</h3>
+          <aside class="learning" data-reveal aria-label="Сейчас изучаю" data-i18n-attr="aria-label:learning.title">
+            <h3 class="learning__title" data-i18n="learning.title">Сейчас изучаю</h3>
             <ul class="learning__list">
               <li>Python</li>
               <li>Django</li>
-              <li>Backend Development</li>
-              <li>REST APIs</li>
-              <li>Databases</li>
+              <li data-i18n="learning.backend">Backend-разработка</li>
+              <li data-i18n="learning.api">REST API</li>
+              <li data-i18n="learning.databases">Базы данных</li>
             </ul>
           </aside>
         </div>
@@ -357,12 +375,12 @@
     <section class="section contact" id="contact">
       <div class="container">
         <span class="section__label" data-reveal>(05)</span>
-        <h2 class="contact__title" data-reveal>Let's work<br><span>together</span></h2>
-        <p class="contact__lead" data-reveal>Have an idea or want to connect? Feel free to reach out.</p>
+        <h2 class="contact__title" data-reveal data-i18n="contact.title">Давайте работать<br><span>вместе</span></h2>
+        <p class="contact__lead" data-reveal data-i18n="contact.lead">Есть идея или хотите познакомиться? Пишите — буду рад.</p>
 
         <div class="contact__mail" data-reveal>
           <a href="mailto:abubakrbahronov@gmail.com" class="contact__email" id="email">abubakrbahronov@gmail.com</a>
-          <button class="btn btn--ghost btn--small" id="copy" type="button">Copy</button>
+          <button class="btn btn--ghost btn--small" id="copy" type="button" data-i18n="contact.copy">Копировать</button>
         </div>
 
         <ul class="socials" data-reveal>
@@ -379,17 +397,18 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>© <span id="year">2026</span> Abubakr</span>
-      <span>Built with HTML, CSS &amp; JavaScript</span>
+      <span data-i18n="footer.built">Сделано на HTML, CSS и JavaScript</span>
       <ul class="footer__links">
         <li><a href="https://github.com/abubakrbahronov-creator" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://t.me/isco_lancaster" target="_blank" rel="noopener">Telegram</a></li>
-        <li><a href="#top">Back to top ↑</a></li>
+        <li><a href="#top" data-i18n="footer.top">Наверх ↑</a></li>
       </ul>
     </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 
