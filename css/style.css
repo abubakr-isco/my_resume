@@ -1713,3 +1713,50 @@ html[lang="ru"] .hero__title {
     transition-delay: 0s !important;
   }
 }
+/* Project card: real homepage screenshot inside a browser window */
+.shot {
+  position: relative;
+  width: 86%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f3ef;
+  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.55);
+  transition: transform 0.8s var(--ease);
+}
+
+.shot__bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 10px;
+}
+
+.shot__bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d6d6cf;
+}
+
+.shot__bar span:first-child {
+  background: #ff5f57;
+}
+
+.work__media .shot img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+.work:hover .work__media .shot img {
+  transform: none;
+}
+
+.work:hover .shot {
+  transform: translateY(-6px) scale(1.03);
+}

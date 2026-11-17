@@ -16,7 +16,7 @@ window.TRANSLATIONS = {
     'menu.close': 'Close menu',
     'toast.copied': 'Email copied ✓',
 
-    'meta.title': 'Abubakr — Frontend Developer',
+    'meta.title': 'Abubakr — Full-Stack Developer',
 
     'header.home': 'Go to homepage',
     'nav.label': 'Main navigation',
@@ -29,16 +29,16 @@ window.TRANSLATIONS = {
     'cta.contact': 'Contact Me',
 
     'hero.hello': 'Hi, I\'m <span class="accent">Abubakr</span>',
-    'hero.title1': 'Frontend',
+    'hero.title1': 'Full-Stack',
     'hero.title2': 'Developer',
     'hero.lead':
-      'I build clean, responsive and interactive websites with HTML, CSS and JavaScript. ' +
-      'Currently learning Python and Django to become a Full-Stack Developer.',
+      'I build clean, responsive and interactive websites: front end with HTML, CSS and JavaScript, ' +
+      'back end with Python and Django.',
     'hero.viewProjects': 'View Projects',
 
     'facts.focus': 'Focus',
-    'facts.learning': 'Learning',
-    'facts.learningValue': 'Python &amp; Django',
+    'facts.experience': 'Experience',
+    'facts.experienceValue': '1 year',
     'facts.based': 'Based in',
     'facts.basedValue': 'Samarkand',
     'facts.status': 'Status',
@@ -46,18 +46,18 @@ window.TRANSLATIONS = {
 
     'about.photoAlt': 'Abubakr',
     'about.name': 'Abubakr',
-    'about.role': 'Frontend Developer',
+    'about.role': 'Full-Stack Developer',
     'about.title': 'About Me',
-    'about.statement': 'I\'m a <em>Frontend Developer</em> learning how to build modern websites.',
+    'about.statement': 'I\'m a <em>Full-Stack Developer</em> building modern websites — from the interface to the server.',
     'about.text1':
       'I\'m confidently working through HTML, CSS and JavaScript, and I enjoy ' +
       'turning designs into clean, responsive interfaces.',
     'about.text2':
-      'Right now I\'m expanding into backend development with Python and Django. ' +
-      'My goal is to gradually move from Frontend to Full-Stack Development, one project at a time.',
+      'On the backend I work with Python and Django, and I keep growing ' +
+      'as a Full-Stack Developer, one project at a time.',
     'about.text3':
-      'I don\'t have commercial experience yet — this portfolio shows my skills, ' +
-      'my learning process and the projects I build while studying.',
+      'I have a year of commercial development experience: I\'ve built real websites ' +
+      'for businesses — from the interface to the server side.',
 
     'skills.title': 'Skills',
     'skills.subtitle': 'Honest levels — no fake percentages.',
@@ -68,36 +68,31 @@ window.TRANSLATIONS = {
     'level.basic': 'Basic',
 
     'projects.title': 'Projects',
-    'projects.subtitle': 'Practice &amp; learning projects I build while studying.',
-    'badge.team': 'Team Project',
-    'badge.learning': 'Learning Project',
-    'work.soon': 'Coming Soon',
-    'work.demo': 'Live Demo ↗',
-    'work1.aria': 'Mercedes-Benz Samarkand on GitHub',
-    'work1.desc':
-      'A multi-page dealership website: home page, model range (E-Class, GLE, CLE, S-Class), ' +
-      'an interactive car configurator and a contacts page.',
-    'work2.aria': 'JavaScript Mini App live demo',
-    'work2.title': 'JavaScript Mini App',
-    'work2.desc':
-      'A small interactive app (for example a to-do list or quiz) to practice DOM manipulation, ' +
-      'events and localStorage.',
-    'work3.aria': 'Django Web Application on GitHub',
-    'work3.title': 'Django Web Application',
-    'work3.desc':
-      'My first backend project while learning Django: models, views, templates and working with a database.',
+    'projects.subtitle': 'Real-world websites and learning projects.',
+    'work.visit': 'Visit Site ↗',
+    'work4.aria': 'IKROM Shashlik website',
+    'work4.desc':
+      'Website for a shashlik restaurant chain: searchable menu with prices, cart with delivery or pickup, ' +
+      'branch selection, table booking and a UZ / RU language switch. I built the backend.',
+    'work6.aria': 'SDS UZ Inc website',
+    'work6.desc':
+      'Website for a US trucking &amp; freight company: services, fleet, about page, ' +
+      'contacts and a freight quote request form.',
+    'work5.aria': 'FluxenWeb website',
+    'work5.desc':
+      'Website for the FluxenWeb web studio — "We build what\'s next". ' +
+      'I built the frontend: layout, responsiveness and UI animations.',
+
 
     'journey.title': 'My Journey',
-    'journey.subtitle': 'From Frontend basics toward Full-Stack.',
-    'journey.step1': 'Learning HTML &amp; CSS',
-    'journey.step2': 'Learning JavaScript',
-    'journey.step3': 'Building first Frontend projects',
-    'journey.step4': 'Learning Python',
-    'journey.step5': 'Learning Django',
-    'journey.future': 'Future',
-    'journey.goal': 'Frontend → Full-Stack Developer',
-    'learning.title': 'Currently Learning',
-    'learning.backend': 'Backend Development',
+    'journey.subtitle': 'A year of commercial development — from the interface to the server.',
+    'journey.step1': 'HTML, CSS &amp; JavaScript',
+    'journey.step2': 'First commercial frontend projects',
+    'journey.step3': 'Backend with Python &amp; Django',
+    'journey.step4': 'Websites for businesses: IKROM Shashlik, FluxenWeb, SDS UZ Inc',
+    'journey.future': 'Now',
+    'journey.goal': 'Full-Stack Developer',
+    'learning.title': 'My Stack',
     'learning.api': 'REST APIs',
     'learning.databases': 'Databases',
 
