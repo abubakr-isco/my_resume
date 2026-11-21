@@ -51,10 +51,10 @@
       <a href="#top" class="logo" aria-label="На главную" data-i18n-attr="aria-label:header.home"><span>&lt;</span>Abubakr<span>/&gt;</span></a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация" data-i18n-attr="aria-label:nav.label">
-        <a href="#about" class="nav__link" data-i18n="nav.about">Обо мне</a>
-        <a href="#skills" class="nav__link" data-i18n="nav.skills">Навыки</a>
+        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Цены</a>
         <a href="#projects" class="nav__link" data-i18n="nav.projects">Проекты</a>
         <a href="#journey" class="nav__link" data-i18n="nav.journey">Путь</a>
+        <a href="#about" class="nav__link" data-i18n="nav.about">Обо мне</a>
         <a href="#contact" class="nav__link nav__link--mobile-only" data-i18n="nav.contact">Контакты</a>
       </nav>
 
@@ -131,75 +131,71 @@
       </div>
     </div>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section section--surface" id="about">
-      <div class="container about">
-        <div class="about__photo" data-reveal>
-          <img src="images/me.jpg" alt="Абубакр" loading="lazy" data-i18n-attr="alt:about.photoAlt">
-          <div class="about__caption">
-            <span data-i18n="about.name">Абубакр</span>
-            <span data-i18n="about.role">Full-Stack-разработчик</span>
-          </div>
-        </div>
-
-        <div class="about__content">
-          <span class="section__label" data-reveal>(01)</span>
-          <h2 class="section__title" data-reveal data-i18n="about.title">Обо мне</h2>
-          <p class="about__statement" data-reveal data-i18n="about.statement">
-            Я <em>Full-Stack-разработчик</em> и создаю современные сайты — от интерфейса до сервера.
-          </p>
-          <p class="about__text" data-reveal data-i18n="about.text1">
-            Я уверенно работаю с HTML, CSS и JavaScript и люблю превращать макеты
-            в аккуратные адаптивные интерфейсы.
-          </p>
-          <p class="about__text" data-reveal data-i18n="about.text2">
-            На backend я работаю с Python и Django и продолжаю развиваться
-            как Full-Stack-разработчик, проект за проектом.
-          </p>
-          <p class="about__text" data-reveal data-i18n="about.text3">
-            У меня год опыта коммерческой разработки: я делал реальные сайты для
-            бизнеса — от вёрстки интерфейса до серверной части.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="skills">
+    <!-- ============ PRICING ============ -->
+    <section class="section" id="pricing">
       <div class="container">
         <div class="section__head" data-reveal>
-          <span class="section__label">(02)</span>
-          <h2 class="section__title" data-i18n="skills.title">Навыки</h2>
-          <p class="section__subtitle" data-i18n="skills.subtitle">Честные уровни — без выдуманных процентов.</p>
+          <span class="section__label">(01)</span>
+          <h2 class="section__title" data-i18n="price.title">Услуги и цены</h2>
+          <p class="section__subtitle" data-i18n="price.subtitle">Точная стоимость зависит от задач проекта.</p>
         </div>
 
-        <ol class="skill-groups">
-          <li class="skill-group" data-reveal>
-            <span class="skill-group__num">01</span>
-            <h3 class="skill-group__title">Frontend</h3>
-            <ul class="skill-list">
-              <li class="skill" data-level="comfortable">HTML5 <span data-i18n="level.comfortable">Уверенно</span></li>
-              <li class="skill" data-level="comfortable">CSS3 <span data-i18n="level.comfortable">Уверенно</span></li>
-              <li class="skill" data-level="comfortable">JavaScript <span data-i18n="level.comfortable">Уверенно</span></li>
-            </ul>
+        <ol class="prices">
+          <li class="price" data-reveal>
+            <div class="price__meta">
+              <span class="price__num">01</span>
+            </div>
+            <div class="price__body">
+              <h3 class="price__title" data-i18n="price.p1.title">Telegram-бот</h3>
+              <p class="price__desc" data-i18n="price.p1.desc">Заказы, запись, оплата и поддержка клиентов прямо в Telegram — бот работает за вас 24/7.</p>
+            </div>
+            <p class="price__cost"><span data-i18n="price.from">от</span> <strong>1 299 000</strong> <span data-i18n="price.currency">сум</span></p>
+            <a href="https://t.me/isco_lancaster" target="_blank" rel="noopener" class="price__link" aria-label="Написать в Telegram" data-i18n-attr="aria-label:price.cta">→</a>
           </li>
-          <li class="skill-group" data-reveal>
-            <span class="skill-group__num">02</span>
-            <h3 class="skill-group__title">Backend</h3>
-            <ul class="skill-list">
-              <li class="skill" data-level="comfortable">Python <span data-i18n="level.comfortable">Уверенно</span></li>
-              <li class="skill" data-level="comfortable">Django <span data-i18n="level.comfortable">Уверенно</span></li>
-            </ul>
+          <li class="price" data-reveal>
+            <div class="price__meta">
+              <span class="price__num">02</span>
+            </div>
+            <div class="price__body">
+              <h3 class="price__title" data-i18n="price.p2.title">Корпоративный сайт</h3>
+              <p class="price__desc" data-i18n="price.p2.desc">Быстрый и аккуратный сайт, который вызывает доверие и приводит новых клиентов.</p>
+            </div>
+            <p class="price__cost"><span data-i18n="price.from">от</span> <strong>4 990 000</strong> <span data-i18n="price.currency">сум</span></p>
+            <a href="https://t.me/isco_lancaster" target="_blank" rel="noopener" class="price__link" aria-label="Написать в Telegram" data-i18n-attr="aria-label:price.cta">→</a>
           </li>
-          <li class="skill-group" data-reveal>
-            <span class="skill-group__num">03</span>
-            <h3 class="skill-group__title" data-i18n="skills.tools">Инструменты</h3>
-            <ul class="skill-list">
-              <li class="skill" data-level="comfortable">Git <span data-i18n="level.comfortable">Уверенно</span></li>
-              <li class="skill" data-level="comfortable">GitHub <span data-i18n="level.comfortable">Уверенно</span></li>
-              <li class="skill" data-level="comfortable">VS Code <span data-i18n="level.comfortable">Уверенно</span></li>
-              <li class="skill" data-level="comfortable">Figma <span data-i18n="level.comfortable">Уверенно</span></li>
-            </ul>
+          <li class="price" data-reveal>
+            <div class="price__meta">
+              <span class="price__num">03</span>
+            </div>
+            <div class="price__body">
+              <h3 class="price__title" data-i18n="price.p3.title">Интернет-магазин</h3>
+              <p class="price__desc" data-i18n="price.p3.desc">Понятный каталог, безопасная оплата и простое управление заказами.</p>
+            </div>
+            <p class="price__cost"><span data-i18n="price.from">от</span> <strong>7 990 000</strong> <span data-i18n="price.currency">сум</span></p>
+            <a href="https://t.me/isco_lancaster" target="_blank" rel="noopener" class="price__link" aria-label="Написать в Telegram" data-i18n-attr="aria-label:price.cta">→</a>
+          </li>
+          <li class="price" data-reveal>
+            <div class="price__meta">
+              <span class="price__num">04</span>
+            </div>
+            <div class="price__body">
+              <h3 class="price__title" data-i18n="price.p4.title">Мобильное приложение</h3>
+              <p class="price__desc" data-i18n="price.p4.desc">Нативные приложения для iOS и Android с продуманной логикой и удобным интерфейсом.</p>
+            </div>
+            <p class="price__cost"><span data-i18n="price.from">от</span> <strong>12 999 000</strong> <span data-i18n="price.currency">сум</span></p>
+            <a href="https://t.me/isco_lancaster" target="_blank" rel="noopener" class="price__link" aria-label="Написать в Telegram" data-i18n-attr="aria-label:price.cta">→</a>
+          </li>
+          <li class="price price--popular" data-reveal>
+            <div class="price__meta">
+              <span class="price__num">05</span>
+              <span class="price__badge" data-i18n="price.popular">Популярно</span>
+            </div>
+            <div class="price__body">
+              <h3 class="price__title" data-i18n="price.p5.title">CRM и автоматизация</h3>
+              <p class="price__desc" data-i18n="price.p5.desc">Автоматизируем продажи, процессы и общение с клиентами под то, как работает ваш бизнес.</p>
+            </div>
+            <p class="price__cost"><span data-i18n="price.from">от</span> <strong>20 000 000</strong> <span data-i18n="price.currency">сум</span></p>
+            <a href="https://t.me/isco_lancaster" target="_blank" rel="noopener" class="price__link" aria-label="Написать в Telegram" data-i18n-attr="aria-label:price.cta">→</a>
           </li>
         </ol>
       </div>
@@ -209,7 +205,7 @@
     <section class="section section--surface" id="projects">
       <div class="container">
         <div class="section__head" data-reveal>
-          <span class="section__label">(03)</span>
+          <span class="section__label">(02)</span>
           <h2 class="section__title" data-i18n="projects.title">Проекты</h2>
           <p class="section__subtitle" data-i18n="projects.subtitle">Реальные сайты и учебные проекты.</p>
         </div>
@@ -300,7 +296,7 @@
     <section class="section" id="journey">
       <div class="container">
         <div class="section__head" data-reveal>
-          <span class="section__label">(04)</span>
+          <span class="section__label">(03)</span>
           <h2 class="section__title" data-i18n="journey.title">Мой путь</h2>
           <p class="section__subtitle" data-i18n="journey.subtitle">Год в коммерческой разработке — от интерфейса до сервера.</p>
         </div>
@@ -340,6 +336,39 @@
               <li data-i18n="learning.databases">Базы данных</li>
             </ul>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--surface" id="about">
+      <div class="container about">
+        <div class="about__photo" data-reveal>
+          <img src="images/me.jpg" alt="Абубакр" loading="lazy" data-i18n-attr="alt:about.photoAlt">
+          <div class="about__caption">
+            <span data-i18n="about.name">Абубакр</span>
+            <span data-i18n="about.role">Full-Stack-разработчик</span>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="section__label" data-reveal>(04)</span>
+          <h2 class="section__title" data-reveal data-i18n="about.title">Обо мне</h2>
+          <p class="about__statement" data-reveal data-i18n="about.statement">
+            Я <em>Full-Stack-разработчик</em> и создаю современные сайты — от интерфейса до сервера.
+          </p>
+          <p class="about__text" data-reveal data-i18n="about.text1">
+            Я уверенно работаю с HTML, CSS и JavaScript и люблю превращать макеты
+            в аккуратные адаптивные интерфейсы.
+          </p>
+          <p class="about__text" data-reveal data-i18n="about.text2">
+            На backend я работаю с Python и Django и продолжаю развиваться
+            как Full-Stack-разработчик, проект за проектом.
+          </p>
+          <p class="about__text" data-reveal data-i18n="about.text3">
+            У меня год опыта коммерческой разработки: я делал реальные сайты для
+            бизнеса — от вёрстки интерфейса до серверной части.
+          </p>
         </div>
       </div>
     </section>
